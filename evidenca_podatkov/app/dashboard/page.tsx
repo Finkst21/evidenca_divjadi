@@ -8,7 +8,7 @@ interface Record {
   vrsta: string;
   lokacija: string;
   opombe: string;
-}
+} 
 
 export default function DashboardPage() {
   const [records, setRecords] = useState<Record[]>([
