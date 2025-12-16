@@ -4,42 +4,14 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  password  String
-  isAdmin   Boolean  @default(false)
-
-  uplenitve Uplenitev[]
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  email     String?
+  name      String?
+  role      String   @default("user")
   createdAt DateTime @default(now())
-}
-
-model Divjad {
-  id        Int      @id @default(autoincrement())
-  naziv     String
-  opis      String?
-  createdAt DateTime @default(now())
-
-  uplenitve Uplenitev[]
-}
-
-model Obvestilo {
-  id        Int      @id @default(autoincrement())
-  naslov    String
-  vsebina   String
-  createdAt DateTime @default(now())
-}
-
-model Uplenitev {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  divjadId  Int
-  opis      String?
-  datum     DateTime @default(now())
-
-  user      User    @relation(fields: [userId], references: [id])
-  divjad    Divjad  @relation(fields: [divjadId], references: [id])
+  updatedAt DateTime @updatedAt
 }
