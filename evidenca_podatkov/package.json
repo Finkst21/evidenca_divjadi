@@ -10,11 +10,18 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.3",
+    "@portabletext/react": "^6.0.0",
     "@prisma/client": "^7.1.0",
+    "@sanity/client": "^7.13.2",
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.21.1",
     "next": "16.0.1",
+    "next-sanity": "^11.6.11",
     "prisma": "^7.1.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "sanity": "^4.21.1",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
